@@ -1,0 +1,380 @@
+/*
+//font-family: 'Montserrat', sans-serif;
+//font-family: 'Montserrat Alternates', sans-serif;
+*/
+html{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-image: url('/img/bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    height: auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+}
+/* Logo + Title */
+.titleBox_outher{
+    position: relative;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    height: 150px;
+}
+.titleBox_inner{
+    position: relative;
+    float: left;
+    width: auto;
+    height: 100%;
+}
+.titleBox_hover{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+}
+.logoSelf_inner{
+    position: relative;
+    float: left;
+    width: 90px;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 50px;
+}
+.titleBox_Text_inner{
+    position: relative;
+    float: left;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+}
+.titleBox_Text_inner h1{
+    display: inline;
+    font-size: 30pt;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+}
+/* Upload Box */
+.frameBox_outher{
+    position: relative;
+    float: left;
+    margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    max-width: 90%;
+    box-sizing: border-box;
+    height: 400px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 1);
+}
+.frameBox_dropBox1_outher{
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.frameBox_dropBox1_inner{
+    float: left;
+    position: relative;
+    height: 90%;
+    width: 90%;
+    border: 2px dashed #e5e5e5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease-in-out;
+}
+.frameBox_dropBox1_uploadIcon_inner{
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease-in-out;
+}
+/* hover animation */
+.frameBox_dropBox1_inner:hover{
+    cursor: pointer;
+    border: 2px dashed #cccccc;
+}
+.frameBox_dropBox1_inner:hover .frameBox_dropBox1_uploadIcon_inner{
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+/* 2th box */
+.frameBox_dropBox2_outher{
+    float: right;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.frameBox_dropBox2_inner{
+    float: left;
+    position: relative;
+    height: 90%;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease-in-out;
+}
+.frameBox_dropBox2_upper{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 30pt;
+    float: left;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+.frameBox_dropBox2_under_outher{
+    float: left;
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+.frameBox_dropBox2_under{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* footer */
+.footer_outher{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+.footer_inner{
+    position: relative;
+    float: right;
+    padding: 20px;
+    margin: 0px;
+    box-shadow: -4px -4px 15px 0px rgba(0, 0, 0, 0.5);
+}
+/* fileInput */
+#fileInput{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.fileInput_label{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
+}
+#resetForm{
+    display: inline;
+}
+/* Upload Boxes */
+.makeInvisible{
+    display: none;
+}
+.fileContentViewer{
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+}
+.oneFileBox{
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11pt;
+    overflow-x: hidden;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    word-wrap: break-word;
+    float: left;
+}
+.oneFileBoxBottomSPace{
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-top: 80px;
+}
+.oneFileBoxText{
+    float: left;
+    width: 80%;
+    position: relative;
+}
+.oneFileBoxButtonOuther{
+    float: left;
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+.deleteButtonImage{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    float: right;
+    transition: 0.3s ease-in-out;
+}
+.deleteButtonHover{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+.oneFileBoxButtonInner{
+    float: right;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+.oneFileBoxButtonInner:hover .deleteButtonImage{
+    transform: rotate(-90deg);
+}
+.loadingbarOuther{
+    position: relative;
+    float: left;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    height: 5px;
+}
+.loadingbarInner{
+    position: relative;
+    background-color: #f00;
+    float: left;
+    width: 0%;
+    height: 100%;
+    transition: 0.3s;
+}
+/* upload Button */
+.uploadButtonBox_inner{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+    padding: 20px 10px;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 8px;
+    transition: 0.15s ease-in-out;
+    z-index: 5;
+}
+.uploadButtonBox_inner:active{
+    box-shadow: 0px 0px 10px 0px black;
+}
+.uploadButtonBox_inner::selection{
+    background-color: transparent;
+}
+
+/* Settings box */
+.settingsUpload{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 5;
+    box-sizing: border-box;
+}
+.settingsUpload_inner{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+}
+.settingsUploadOneLine{
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 60px;
+}
+.settingsUploadOneLine input{
+    float: right;
+    padding: 10px;
+}
+.smallFiller{
+    display: block !important;
+    padding: 0px !important;
+    margin: 0px 4px 0px 4px !important;
+    border: 0px !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid black !important;
+    width: 40px !important;
+    float: left !important;
+    padding: 0px !important;
+}
+.settingsUploadOneLine span{
+    display: block;
+    float: left;
+}
+
+.settingsSaveButton{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    float: left;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.settingsSaveButton:active{
+    box-shadow: 0px 0px 5px 0px #000;
+}

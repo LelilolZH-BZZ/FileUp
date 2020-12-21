@@ -1,0 +1,19 @@
+SELECT
+`Spieler`.`Vorname` as Vorname,
+`Spieler`.`Nachname` as Nachname,
+`Saisons`.`Start` as Saisonstart,
+`Saisons`.`Ende` as Saisonende,
+`Ergebnisse`.`Spiele` as Spiele,
+`Ergebnisse`.`Tore` as Tore,
+`Clubs`.`Clubname` as Club
+FROM
+`Saisons`
+INNER JOIN
+`Spieler`
+ON `Saisons`.`Spieler-id` = `Spieler`.`ID`
+INNER JOIN
+`Ergebnisse`
+ON `Saisons`.`Ergebniss-id` = `Ergebnisse`.`ID`
+INNER JOIN
+`Clubs`
+ON `Saisons`.`Club-id` = `Clubs`.`ID`
